@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inversiones B/L</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#0052CC',
+              secondary: '#F5F7FA',
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-secondary text-gray-800">
+    <!-- header -->
+    <header class="bg-primary text-white py-6">
+      <div class="container mx-auto px-4 flex items-center gap-3">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-6h13v6a2 2 0 01-2 2H11a2 2 0 01-2-2z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 13h4v4H3z" />
+        </svg>
+        <div>
+          <h1 class="text-2xl font-bold">Inversiones B/L</h1>
+          <p class="text-sm">Tu socio de confianza en logística</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 space-y-10">
+      <!-- hero card -->
+      <div class="rounded-lg overflow-hidden shadow-lg">
+        <img src="https://source.unsplash.com/1200x400/?truck,logistics" alt="Hero" class="w-full h-48 object-cover" />
+      </div>
+
+      <!-- actions -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <a href="#" class="bg-white rounded-lg shadow p-6 flex flex-col items-center hover:shadow-lg transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-primary mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18v18H3V3z" />
+          </svg>
+          <span class="font-semibold">Cotizar</span>
+          <span class="text-sm text-gray-500">Calcula el costo de tu envío</span>
+        </a>
+        <a href="#" class="bg-white rounded-lg shadow p-6 flex flex-col items-center hover:shadow-lg transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-green-500 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7l4-4 4 4m0 6l-4 4-4-4" />
+          </svg>
+          <span class="font-semibold">Rastrear</span>
+          <span class="text-sm text-gray-500">Sigue tu envío en tiempo real</span>
+        </a>
+      </div>
+
+      <!-- inspection -->
+      <div class="bg-white rounded-lg shadow p-6">
+        <div class="flex justify-between items-center mb-4">
+          <div>
+            <p class="font-semibold">Registro de Inspección</p>
+            <p class="text-sm text-gray-500">Ver fotos y agregar observaciones</p>
+          </div>
+          <button id="toggle-gallery" class="bg-primary text-white py-2 px-4 rounded hover:bg-blue-700 transition">Ver Fotos</button>
+        </div>
+        <div id="gallery" class="hidden grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4">
+          <img src="public/images/ChatGPT Image 9 feb 2026, 05_09_13 p.m..png" alt="Inspección 1" class="w-full h-32 object-cover rounded shadow">
+          <img src="public/images/WhatsApp Image 2026-02-10 at 1.53.06 PM.jpeg" alt="Inspección 2" class="w-full h-32 object-cover rounded shadow">
+          <img src="public/images/WhatsApp Image 2026-02-10 at 1.53.08 PM.jpeg" alt="Inspección 3" class="w-full h-32 object-cover rounded shadow">
+          <img src="public/images/WhatsApp Image 2026-02-10 at 1.53.09 PM (1).jpeg" alt="Inspección 4" class="w-full h-32 object-cover rounded shadow">
+          <img src="public/images/WhatsApp Image 2026-02-10 at 1.53.09 PM (2).jpeg" alt="Inspección 5" class="w-full h-32 object-cover rounded shadow">
+          <img src="public/images/WhatsApp Image 2026-02-10 at 1.53.09 PM.jpeg" alt="Inspección 6" class="w-full h-32 object-cover rounded shadow">
+          <img src="public/images/WhatsApp Image 2026-02-10 at 1.53.10 PM (1).jpeg" alt="Inspección 7" class="w-full h-32 object-cover rounded shadow">
+          <img src="public/images/WhatsApp Image 2026-02-10 at 1.53.10 PM.jpeg" alt="Inspección 8" class="w-full h-32 object-cover rounded shadow">
+        </div>
+      </div>
+
+      <!-- shipments -->
+      <section class="bg-white rounded-lg shadow p-6">
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="font-semibold text-lg">Mis Envíos</h2>
+          <a href="#" class="text-primary text-sm">Ver todo →</a>
+        </div>
+        <ul class="space-y-3">
+          <li class="flex justify-between items-center">
+            <div class="flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <div>
+                <p class="font-medium">BL001234</p>
+                <p class="text-sm text-gray-500">Tegucigalpa → San Pedro Sula</p>
+              </div>
+            </div>
+            <span class="text-sm bg-yellow-100 text-yellow-800 py-1 px-3 rounded-full">En tránsito</span>
+          </li>
+          <li class="flex justify-between items-center">
+            <div class="flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <div>
+                <p class="font-medium">BL005678</p>
+                <p class="text-sm text-gray-500">La Ceiba → Puerto Cortés</p>
+              </div>
+            </div>
+            <span class="text-sm bg-green-100 text-green-800 py-1 px-3 rounded-full">Entregado</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- services -->
+      <section class="bg-white rounded-lg shadow p-6">
+        <h2 class="font-semibold text-lg mb-4">Nuestros Servicios</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="flex items-center gap-3">
+            <img src="https://source.unsplash.com/80x80/?warehouse" alt="Almacenamiento" class="w-20 h-20 rounded" />
+            <div>
+              <p class="font-medium">Almacenamiento</p>
+              <p class="text-sm text-gray-500">Espacios seguros</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <img src="https://source.unsplash.com/80x80/?cargo,container" alt="Carga Completa" class="w-20 h-20 rounded" />
+            <div>
+              <p class="font-medium">Carga Completa</p>
+              <p class="text-sm text-gray-500">Envíos grandes</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- contact -->
+      <footer class="bg-white rounded-lg shadow p-6">
+        <h2 class="font-semibold text-lg mb-2">Contacto</h2>
+        <p class="text-sm"><strong>Teléfono:</strong> +504 2221‑5678</p>
+        <p class="text-sm"><strong>Email:</strong> info@inversionesbl.com</p>
+      </footer>
+    </main>
+
+    <script>
+      const toggleButton = document.getElementById('toggle-gallery');
+      const gallery = document.getElementById('gallery');
+
+      toggleButton.addEventListener('click', () => {
+        gallery.classList.toggle('hidden');
+        toggleButton.textContent = gallery.classList.contains('hidden') ? 'Ver Fotos' : 'Ocultar Fotos';
+      });
+    </script>
+  </body>
+</html>
